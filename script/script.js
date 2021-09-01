@@ -106,56 +106,64 @@ document.forms[0].addEventListener('submit', (e) =>{
     e.preventDefault()
 
     const searchCoin = document.querySelector('#search-bar').value;
-   
-    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${searchCoin}&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
-    .then((res) =>{
-        return res.json()
-    })
-    .then((data) =>{
-        var singleCoin = ''
-        data.forEach((eachCoin) =>{
-            singleCoin += `
-            
-            <div class="detailed-container">
-            <header>
-                <img src="${eachCoin.image}" alt="coin-img">
-                <h1>${eachCoin.name}</h1>
-                <p>${eachCoin.symbol}</p>
-            </header>
 
-            <div class="coin-data">
-                <div class="box-one">
-                    <ul>
-                        <li class="item"><strong>Rank: </strong> <span>${eachCoin.market_cap_rank}</span>
-                        <li class="item"><strong>Current price: </strong> <span>₹${eachCoin.current_price}</span></li>
-                        <li class="item"><strong>High in 24h:</strong> <span>₹${eachCoin.high_24h}</span></li>
-                        <li class="item"><strong>Low in 24h:</strong> <span>₹${eachCoin.low_24h}</span></li>
-                        <li class="item"><strong>ATH:</strong> <span>₹${eachCoin.ath}</span></li>
-                        <li class="item"><strong>ATH change in %:</strong> <span>${eachCoin.ath_change_percentage}%</span></li>
-                        <li class="item"><strong>ATL:</strong> <span>₹${eachCoin.atl}</span></li>
-                        <li class="item"><strong>ATL change in %:</strong> <span>${eachCoin.atl_change_percentage}%</span></li>
-                    </ul>
-                </div>
-                <div class="box-two">
-                    <ul>
-                        <li class="item"><strong>Price change in 24h:</strong> <span>₹${eachCoin.price_change_24h}</span></li>
-                        <li class="item"><strong>Price change (24h) in %:</strong> <span>${eachCoin.price_change_percentage_24h}</span></li>
-                        <li class="item"><strong>Total supply:</strong> <span></span></li>
-                        <li class="item"><strong>Total volume:</strong> <span>${eachCoin.total_volume}</span></li>
-                        <li class="item"><strong>Market capital:</strong> <span>${eachCoin.market_cap}</span></li>
-                        <li class="item"><strong>Market capital in 24h:</strong> <span>${eachCoin.market_cap_change_24h}</span></li>
-                        <li class="item"><strong>Markte capital (24h) in %:</strong> <span>${eachCoin.market_cap_change_percentage_24h}%</span></li>
-                        <li class="item"><strong>Last update:</strong> <span>${eachCoin.last_updated} </span></li>
-                    </ul>
-                </div>
-            </div>
-
-            `
-
-            document.querySelector('.single-detailed-section').innerHTML = singleCoin;
+    if(!searchCoin){
+        alert("Input field can not blank")
+    }else{
+        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&ids=${searchCoin}&order=market_cap_desc&per_page=1&page=1&sparkline=false`)
+        .then((res) =>{
+            return res.json()
         })
-    })
-
+        .then((data) =>{
+            // console.log(data.length)
+            if(data.length === 0){
+                alert("Please enter correct cryptocurrency.")
+            }
+            var singleCoin = ''
+            data.forEach((eachCoin) =>{
+                singleCoin += `
+                
+                <div class="detailed-container">
+                <header>
+                    <img src="${eachCoin.image}" alt="coin-img">
+                    <h1>${eachCoin.name}</h1>
+                    <p>${eachCoin.symbol}</p>
+                </header>
+    
+                <div class="coin-data">
+                    <div class="box-one">
+                        <ul>
+                            <li class="item"><strong>Rank: </strong> <span>${eachCoin.market_cap_rank}</span>
+                            <li class="item"><strong>Current price: </strong> <span>₹${eachCoin.current_price}</span></li>
+                            <li class="item"><strong>High in 24h:</strong> <span>₹${eachCoin.high_24h}</span></li>
+                            <li class="item"><strong>Low in 24h:</strong> <span>₹${eachCoin.low_24h}</span></li>
+                            <li class="item"><strong>ATH:</strong> <span>₹${eachCoin.ath}</span></li>
+                            <li class="item"><strong>ATH change in %:</strong> <span>${eachCoin.ath_change_percentage}%</span></li>
+                            <li class="item"><strong>ATL:</strong> <span>₹${eachCoin.atl}</span></li>
+                            <li class="item"><strong>ATL change in %:</strong> <span>${eachCoin.atl_change_percentage}%</span></li>
+                        </ul>
+                    </div>
+                    <div class="box-two">
+                        <ul>
+                            <li class="item"><strong>Price change in 24h:</strong> <span>₹${eachCoin.price_change_24h}</span></li>
+                            <li class="item"><strong>Price change (24h) in %:</strong> <span>${eachCoin.price_change_percentage_24h}</span></li>
+                            <li class="item"><strong>Total supply:</strong> <span></span></li>
+                            <li class="item"><strong>Total volume:</strong> <span>${eachCoin.total_volume}</span></li>
+                            <li class="item"><strong>Market capital:</strong> <span>${eachCoin.market_cap}</span></li>
+                            <li class="item"><strong>Market capital in 24h:</strong> <span>${eachCoin.market_cap_change_24h}</span></li>
+                            <li class="item"><strong>Markte capital (24h) in %:</strong> <span>${eachCoin.market_cap_change_percentage_24h}%</span></li>
+                            <li class="item"><strong>Last update:</strong> <span>${eachCoin.last_updated} </span></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                `
+    
+                document.querySelector('.single-detailed-section').innerHTML = singleCoin;
+            })
+        })
+    }
+   
     document.forms[0].reset()
     
 })
