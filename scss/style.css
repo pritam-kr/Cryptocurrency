@@ -115,6 +115,12 @@ main {
           justify-content: space-between;
 }
 
+header .btn-container button {
+  border: 1px solid rgba(0, 0, 0, 0.082);
+  cursor: pointer;
+  padding: 10px 30px;
+}
+
 @media (max-width: 1071px) {
   .main {
     overflow-x: scroll;
