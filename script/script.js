@@ -105,7 +105,7 @@ document.querySelector('.btn-search').addEventListener('click', (e) =>{
 document.forms[0].addEventListener('submit', (e) =>{
     e.preventDefault()
 
-    const searchCoin = document.querySelector('#search-bar').value;
+    const searchCoin = document.querySelector('#search-bar').value.toLowerCase();
 
     if(!searchCoin){
         alert("Input field can not blank")
