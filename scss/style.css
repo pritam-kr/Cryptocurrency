@@ -153,9 +153,18 @@ header .btn-container button {
   background-color: rgba(0, 0, 0, 0.103);
 }
 
-@media (max-width: 1071px) {
-  .main {
-    overflow-x: scroll;
+@media (max-width: 767px) {
+  .total-volume-box {
+    display: none;
+  }
+  .low-box {
+    display: none;
+  }
+  .high-box {
+    display: none;
+  }
+  .symbol-box {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
