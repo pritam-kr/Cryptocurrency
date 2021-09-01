@@ -49,13 +49,13 @@ main{
     width: 100px;
 }
 
-.detailed-section{
-    margin: 30px 20px;
+.detailed-section, .single-detailed-section{
+    margin: 20px 20px;
 }
-.detailed-container p{
+.detailed-container p, .single-detailed-section p{
     padding: 0 30px;
 }
-.detailed-container img{
+.detailed-container img, .single-detailed-section img{
     width: 100px;
     height: 100px;
     max-width: 80%;
@@ -88,6 +88,33 @@ header .btn-container button{
     cursor: pointer;
     padding: 10px 30px;
 }
+
+.search-section{
+    text-align: center;
+    display: none;
+    justify-content: center;
+    padding: 30px 0;
+}
+.search-container{
+    margin: 0 20px;
+    width: 500px;
+}
+.search-container form input{
+    padding: 10px 10px;
+    width: 80%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.246);
+}
+.search-bar-container button{
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.246);
+}
+.search-bar-container button:focus{
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
 @media (max-width: 1071px) {
     .main{
         overflow-x: scroll;
