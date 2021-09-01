@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header .container {
+  padding: 30px 20px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 15px;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.heading div {
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 10px 15px;
+  width: 150px;
+  font-weight: bold;
+}
+
+.details-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.details-table div {
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 10px 15px;
+  width: 150px;
+}
+
+.cypto-container .name-box {
+  width: 180px !important;
+  cursor: pointer;
+}
+
+.cypto-container .rank-box {
+  width: 80px !important;
+  text-align: center;
+}
+
+.cypto-container .total-volume-box {
+  width: 180px;
+}
+
+.cypto-container .symbol-box {
+  width: 100px;
+}
+
+.detailed-section {
+  margin: 30px 20px;
+}
+
+.detailed-container p {
+  padding: 0 30px;
+}
+
+.detailed-container img {
+  width: 100px;
+  height: 100px;
+  max-width: 80%;
+}
+
+.coin-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0;
+}
+
+.coin-data div {
+  width: 600px;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 0px 0px;
+  margin: 5px;
+}
+
+.coin-data ul li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+  padding: 10px 20px;
+}
+
+.coin-data .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1071px) {
+  .main {
+    overflow-x: scroll;
+  }
+}
+/*# sourceMappingURL=style.css.map */

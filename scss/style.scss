@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+header{
+    text-align: center;
+}
+header .container{
+    padding: 30px 20px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    margin: 30px 15px;
+}
+
+.heading{
+    display: flex;
+}
+.heading div{
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    padding: 10px 15px;
+    width: 150px;
+    font-weight: bold;
+}
+.details-table{
+    display: flex;
+}
+.details-table div{
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    padding: 10px 15px;
+    width: 150px;
+}
+.cypto-container .name-box{
+    width: 180px !important;
+    cursor: pointer;
+}
+.cypto-container .rank-box{
+    width: 80px !important;
+    text-align: center;
+}
+.cypto-container .total-volume-box{
+    width: 180px;
+}
+.cypto-container .symbol-box{
+    width: 100px;
+}
+
+.detailed-section{
+    margin: 30px 20px;
+}
+.detailed-container p{
+    padding: 0 30px;
+}
+.detailed-container img{
+    width: 100px;
+    height: 100px;
+    max-width: 80%;
+}
+.coin-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+.coin-data div{
+    width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    padding: 0px 0px;
+    margin: 5px;
+}
+.coin-data ul li{
+    list-style-type: none;
+    // margin-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+    padding: 10px 20px;
+}
+.coin-data .item{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 1071px) {
+    .main{
+        overflow-x: scroll;
+    }
+}
